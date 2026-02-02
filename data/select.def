@@ -197,6 +197,9 @@
 naruto/naruto-kun.def, stages/kfm.def, order=1
 sasuke/sasuke-kun.def, stages/kfm.def, order=1
 
+;--- Dragon Ball Z Universe ---
+goku/GokuZ2.def, stages/kfm.def, order=1
+
 ;--- Original Characters ---
 kfmZ, stages/kfm.def
 kfm720, stages/kfm.def, order=2
@@ -277,13 +280,13 @@ stages/stage0-720.def
  ;'maxmatches' parameter in [Characters] section)
 
  ;Maximum number of matches to fight before game ends in Arcade single mode.
-arcade.maxmatches = 6,1,1,0,0,0,0,0,0,0
+arcade.maxmatches = 4,1,0,0,0,0,0,0,0,0
 
  ;Like arcade.maxmatches, but applies to Arcade team modes (sans 'Ratio').
-team.maxmatches = 4,1,1,0,0,0,0,0,0,0
+team.maxmatches = 3,1,0,0,0,0,0,0,0,0
 
  ;Maximum number of matches to fight before game ends in Time Attack mode.
-timeattack.maxmatches = 6,1,1,0,0,0,0,0,0,0
+timeattack.maxmatches = 3,1,0,0,0,0,0,0,0,0
 
  ;IKEMEN feature: Similar to arcade.maxmatches, but applies to Survival mode.
  ;Use -1 value to choose which order number should have unlimited matches.
