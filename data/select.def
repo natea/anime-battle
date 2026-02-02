@@ -193,8 +193,13 @@
  ;
  ;Insert your characters below.
 
+;--- Naruto Universe ---
+naruto/naruto-kun.def, stages/kfm.def, order=1
+sasuke/sasuke-kun.def, stages/kfm.def, order=1
+
+;--- Original Characters ---
 kfmZ, stages/kfm.def
-kfm720, stages/kfm.def, order=0
+kfm720, stages/kfm.def, order=2
 randomselect
 
 ;-------------------------------------------------------------------------------

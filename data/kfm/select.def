@@ -66,6 +66,11 @@
  ;
  ;Insert your characters below.
 
+;--- Naruto Universe ---
+naruto/naruto-kun.def, stages/kfm.def, order=1
+sasuke/sasuke-kun.def, stages/kfm.def, order=1
+
+;--- Original Characters ---
 kfm, stages/kfm.def
 
 ;-----------------------
