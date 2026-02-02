@@ -1,0 +1,28 @@
+
+A - Punch
+
+B - Kick
+
+C - Explosive
+
+S - Power Charge
+
+SPECIALS:
+
+D,DF,F,a - Shokyaku
+
+D,DB,B,a - Incinerator Blast
+
+D,DF,F,b - Machine Gun Blow (IN AIR)
+
+D,DB,B,b - Burning Kick
+
+D,DF,F,c - Shokyaku-ho
+
+D,DB,B,c - Rocket Stomp
+
+D,c - Lightning Eye
+
+SUPER: 
+
+x - Super Incinerator Cannon

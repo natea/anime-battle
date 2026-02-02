@@ -1,0 +1,29 @@
+;***************************************************************************;
+;******************* Created in Fighter Factory Ultimate *******************;
+;*******************      http://www.virtualltek.com     *******************;
+;***************************************************************************;
+
+[Info]
+name ="Genos JUS"
+displayname ="Genos"
+versiondate = 06/10/2017
+mugenversion = 1.0
+author ="Knightmare, Edit by TrafalgarLawzz, Edit by Bastian7s"
+pal.defaults =1
+
+[Files]
+sprite =Genos.sff
+anim =Genos.air
+sound =Genos.snd
+cmd =Genos.cmd
+cns =Genos.cns
+stcommon =common1.cns
+st =Genos.cns
+pal1=1.act
+st1=IA.cns
+st2=Especiales.cns
+st3=Supers.cns
+
+[Arcade]
+intro.storyboard = 
+ending.storyboard = 

@@ -200,6 +200,12 @@ sasuke/sasuke-kun.def, stages/kfm.def, order=1
 ;--- Dragon Ball Z Universe ---
 goku/GokuZ2.def, stages/kfm.def, order=1
 
+;--- One Punch Man Universe ---
+genos/Genos_JUS.def, stages/kfm.def, order=8
+
+;--- Jujutsu Kaisen Universe ---
+gojo/Gojo Manga (Full).def, stages/kfm.def, order=1
+
 ;--- Original Characters ---
 kfmZ, stages/kfm.def
 kfm720, stages/kfm.def, order=2

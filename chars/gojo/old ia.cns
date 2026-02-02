@@ -1,0 +1,337 @@
+[statedef -2]
+
+[State 0]
+type = ChangeState
+triggerall = statetype != A
+triggerall = power >= 3000 && helper(30990),fvar(8) > 0
+triggerall = ailevel > 0 && roundstate = 2
+triggerall = ctrl
+triggerall = p2bodydist x >= -125
+trigger1 = random < (ailevel * 100)*2
+value = ifelse(p2bodydist x <= 110,3100,3000)
+
+[State 0]
+type = ChangeState
+triggerall = statetype != A
+triggerall = power >= 1000
+triggerall = ailevel > 0 && roundstate = 2
+triggerall = ctrl
+triggerall = p2bodydist x > 50
+triggerall = !NumHelper(1702)
+trigger1 = random < (ailevel * 100)*2
+value = 1700
+
+[State 0]
+type = ChangeState
+triggerall = statetype != A
+triggerall = power >= 1000
+triggerall = ailevel > 0 && roundstate = 2
+triggerall = ctrl
+triggerall = p2bodydist x > 50
+triggerall = !NumHelper(1802)
+trigger1 = random < (ailevel * 100)*8
+trigger1 = prevstateno = 1700 && numhelper(1702) = 1 && random < (ailevel * 100)*999
+Trigger1 = random < (ailevel * 100)*2 && NumHelper(1702) && pos x =[helper(1702),pos x-30,helper(1702),pos x +30]
+value = 1800
+
+[State 0]
+type = ChangeState
+triggerall = statetype != A
+triggerall = ailevel > 0 && roundstate = 2
+triggerall = ctrl
+triggerall = p2bodydist x = [0,50]
+triggerall = power >= 1000 && !numhelper(1050)
+trigger1 = random < (ailevel * 100)/4
+value = 2000
+
+[State 0]
+type = ChangeState
+triggerall = statetype != A
+triggerall = ailevel > 0 && roundstate = 2
+triggerall = ctrl
+triggerall = p2bodydist x > 30
+triggerall = power >= 1000 && !numhelper(1050)
+trigger1 = random < (ailevel * 100)/4
+trigger2 = prevstateno = 50
+value = 1000
+
+[State 0]
+type = ChangeState
+triggerall = statetype != A
+triggerall = power >= 1000
+triggerall = ailevel > 0 && roundstate = 2
+triggerall = ctrl
+triggerall = p2bodydist x > 50
+triggerall = !NumHelper(1360)
+trigger1 = random < (ailevel * 100)/4
+value = 1300
+
+[State 0]
+type = ChangeState
+triggerall = power >= 1000
+triggerall = ailevel > 0 && roundstate = 2
+triggerall = ctrl
+triggerall = p2bodydist x = [50,120]
+trigger1 = random < (ailevel * 20)
+value = ifelse(statetype = A,1195,1100)/4
+
+[State 0]
+type = ChangeState
+triggerall = statetype != A
+triggerall = power >= 500
+triggerall = ailevel > 0 && roundstate = 2
+triggerall = ctrl
+triggerall = p2bodydist x < 40
+trigger1 = random < (ailevel * 100)/4
+value = 1200
+
+[State 0]
+type = ChangeState
+triggerall = statetype != A
+triggerall = power >= 1000
+triggerall = ailevel > 0 && roundstate = 2
+triggerall = ctrl
+triggerall = p2bodydist x > 50
+triggerall = !NumHelper(1450)
+trigger1 = random < (ailevel * 100)/4
+value = 1400
+
+[State 0]
+type = ChangeState
+triggerall = power>=2000
+triggerall = statetype!=A
+triggerall = ailevel>0&&roundstate=2
+triggerall = ctrl
+triggerall = p2bodydist x = [100,300]
+trigger1 = random < (ailevel * 100)/6
+value = 1500
+
+[State 0]
+type = ChangeState
+triggerall = power >= 2000
+triggerall = statetype != A
+triggerall = ailevel > 0 && roundstate = 2
+triggerall = ctrl
+triggerall = p2bodydist x < 70
+trigger1 = random < (ailevel * 100)/6
+value = 1600
+
+[State 0]
+type = ChangeState
+triggerall = statetype != A
+triggerall = ailevel > 0 && roundstate = 2
+triggerall = ctrl
+triggerall = p2bodydist x < 30
+triggerall= enemynear,statetype != L
+triggerall= enemynear,pos y>= -const(size.height)*.25
+trigger1 = random < (ailevel * 100)/2
+trigger2 = p2movetype = H && random < (ailevel * 100-enemy, gethitvar(hitcount))
+value = 200
+
+[State 0]
+type = ChangeState
+triggerall = statetype != A
+triggerall = ailevel > 0 && roundstate = 2
+triggerall = ctrl
+triggerall = p2bodydist x < 30
+triggerall= enemynear,statetype != L
+triggerall= enemynear,pos y>= -const(size.height)*.25
+trigger1 = random < (ailevel * 100)/2
+trigger2 = p2movetype = H && random < (ailevel * 100-enemy, gethitvar(hitcount))
+value = 300
+
+[State 0]
+type = ChangeState
+triggerall = statetype != A
+triggerall = ailevel > 0 && roundstate = 2
+triggerall = ctrl
+triggerall = p2bodydist x > 100
+triggerall = power >= 500 && !numhelper(420)
+trigger1 = random < (ailevel * 100)
+value = 400
+
+[State 0]
+type = ChangeState
+triggerall = statetype = A
+triggerall = ailevel > 0 && roundstate = 2
+triggerall = ctrl
+triggerall = p2bodydist x < 30
+triggerall = p2bodydist y = [-25,25]
+triggerall = prevstateno != 240
+trigger1 = random < (ailevel * 100)
+value = 240
+
+[State 0]
+type = ChangeState
+triggerall = statetype = A
+triggerall = ailevel > 0 && roundstate = 2
+triggerall = ctrl
+triggerall = p2bodydist x < 30
+triggerall = p2bodydist y = [-25,25]
+trigger1 = random < (ailevel * 100)
+value = 600
+
+[State 0]
+type = ChangeState
+triggerall = statetype = A
+triggerall = ailevel > 0 && roundstate = 2
+triggerall = ctrl
+triggerall = p2bodydist x < 30
+triggerall = p2bodydist y = [-25,25]
+trigger1 = random < (ailevel * 100)
+value = 610
+
+[State 0]
+type = ChangeState
+triggerall = statetype = A
+triggerall = ailevel > 0 && roundstate = 2
+triggerall = ctrl
+triggerall = p2bodydist x < 30
+triggerall = p2bodydist y = [-25,25]
+trigger1 = random < (ailevel * 100)
+value = 620
+
+[State 0]
+type = ChangeState
+triggerall = statetype = A
+triggerall = ailevel > 0 && roundstate = 2
+triggerall = ctrl
+triggerall = p2bodydist x < 30
+triggerall = p2bodydist y = [-25,25]
+trigger1 = random < (ailevel * 100)
+value = 630
+
+[state 0]
+type = changestate
+triggerall = !numhelper(1050)
+triggerall = (roundstate = 2) && ((ctrl) || (stateno = [60, 75])) && (ailevel)
+triggerall = (numhelper(1350) = 0) && (numhelper(1360) = 0)
+triggerall = (numhelper(80015) = 0) && (numhelper(99120) = 0)
+triggerall = (enemy, stateno != 115) || (enemy, stateno != 500) || (enemy, stateno != [5100, 5110])
+triggerall = ((random < (ailevel * 150)) && (p2bodydist y = [-150, 30]))
+trigger1 = (((p2bodydist x = [5, 90]) || (p2bodydist x = [100, 160])) && ((p2stateno = [105, 110]) || (p2stateno = [200, 699]) || (p2stateno = [2200, 2699])))
+trigger2 = (p2bodydist x >= 70) && (enemy, numproj > 0)
+trigger3 = (p2bodydist x = [50, 120]) && (enemy, stateno = [1000, 3000])
+trigger4 = (inguarddist) && (enemynear, movetype != a) && (enemynear, time >= 30) && (p2bodydist x <= 135 + (random % 25)) && (enemynear, vel x = 0)
+value = cond(statetype = a, 132, cond(statetype = c, 131, 130))
+ignorehitpause = 1
+
+[State 0]
+type=ChangeState
+TriggerALL = AILevel > 0 && RoundState = 2
+TriggerALL = Random<(AILevel*100)
+TriggerALL = Ctrl
+TriggerALL = P2BodyDist X > -5
+Trigger1 = (P2BodyDist X<50&&P2MoveType=A)||(Enemy,NumProj>0)
+Trigger2 = ((P2BodyDist X=[-15,100])&&P2MoveType=A)||(Enemy,StateNo=[1000,2000])
+value = Cond(StateType=A,132,130)
+
+[State 0]
+type=ChangeState
+TriggerALL = AILevel > 0 && RoundState = 2
+TriggerALL = Random<(AILevel*100)
+TriggerALL = (StateNo=[60,70])||(StateNo=[110,115])
+TriggerALL = Time >= 10
+TriggerALL = P2BodyDist X > -5
+Trigger1 = (P2BodyDist X<50&&P2MoveType=A)||(Enemy,NumProj>0)
+Trigger2 = ((P2BodyDist X=[-15,100])&&P2MoveType=A)||(Enemy,StateNo=[1000,2000])
+value = Cond(StateType=A,132,130)
+
+[state 0]
+type = changestate
+triggerall = (roundstate = 2) && (pos y = 0)
+trigger1 = ((!ailevel) && (((stateno = 60) || ((movecontact = 1) && (p2statetype = a) && (cond(var(2) = 1, (stateno = [2200, 2499]), (stateno = [200, 499]))))) && (command = "holdup")))
+trigger2 = ((ailevel) && (((stateno = 60) || ((movecontact = 1) && (p2statetype = a) && (cond(var(2) = 1, (stateno = [2200, 2499]), (stateno = [200, 499]))))) && (random < (ailevel * 70))))
+trigger3 = prevstateno = 1200 && movecontact && random < (ailevel * 20)
+value = 40
+
+[state 0]
+type = changestate
+triggerall = (roundstate = 2) && (pos y != 0) && (movecontact = 1) && (cond(var(2) = 1, (stateno = [2600, 2899]), (stateno = [600, 899])))
+trigger1 = ((ailevel) && (random < (ailevel * 70)))
+value = 45
+
+[State 0, Run]
+type = ChangeState
+TriggerALL = AILevel > 0 && RoundState = 2
+TriggerALL = StateType != A
+TriggerALL = Ctrl
+Trigger1 = P2BodyDist X>-15&&P2BodyDist X!=[-15,50]
+Trigger1 = Random<(AILevel*100)/15
+value = 60
+
+[State 0, Run (Aire)]
+type = ChangeState
+TriggerALL = AILevel > 0 && RoundState = 2
+TriggerALL = StateType = A
+TriggerALL = Ctrl
+Trigger1 = P2BodyDist X > -15 && P2BodyDist X !=[-15,50]
+Trigger1 = Random<(AILevel*100)/10
+value = 70
+
+[State 0, Run Atras]
+type = ChangeState
+TriggerALL = AILevel > 0 && RoundState = 2
+TriggerALL = StateType != A
+triggerall = backedgebodydist > 50
+triggerall = ailevel > 0 && roundstate = 2
+triggerall = ctrl
+triggerall = p2bodydist  x < 50 && p2movetype = A
+triggerall = p2bodydist  x < 50 && p2movetype = H
+trigger1 = random<(ailevel * 100)/4
+value = 65
+
+[State 0, Run Atras (Aire)]
+type = ChangeState
+TriggerALL = AILevel > 0 && RoundState = 2
+TriggerALL = StateType = A
+triggerall = backedgebodydist > 50
+triggerall = ailevel > 0 && roundstate = 2
+triggerall = ctrl
+triggerall = p2bodydist  x < 50 && p2movetype = A
+triggerall = p2bodydist  x < 50 && p2movetype = H
+trigger1 = random<(ailevel * 100)/4
+value = 75
+
+;[State 0]
+;type = ChangeState
+;triggerall = ailevel > 0 && roundstate = 2
+;triggerall = ctrl
+;triggerall = p2bodydist x > 100
+;trigger1 = random < (ailevel * 100)
+;value = ifelse(statetype = A,70,60)
+
+;[State 0]
+;type = ChangeState
+;triggerall = ailevel > 0 && roundstate = 2
+;triggerall = ctrl
+;triggerall = p2bodydist x < 100 && P2MoveType = A
+;trigger1 = random < (ailevel * 100)
+;value = ifelse(statetype = A,75,65)
+
+[State 0]
+type = ChangeState
+triggerall = power < powermax
+triggerall = ailevel > 0 && roundstate = 2
+triggerall = ctrl
+triggerall = p2bodydist x > 80
+trigger1 = p2movetype != A && random < (ailevel * 200+enemy, gethitvar(hitcount)*50)/2
+trigger2 = enemynear,stateno = cond(enemy,authorname = "Planeptune"||enemy,authorname = "Planeptune Arte"||enemy,authorname = "Nepgear",195,500) && random < (ailevel * 100+ceil(life*.8))
+value = 500
+
+[State 0]
+type = ChangeState
+triggerall = stateno = 500
+triggerall = ailevel > 0
+trigger1 = (p2bodydist x < 70) || (enemy,numproj > 0)
+trigger2 = power = powermax && helper(30990),fvar(8) > 0
+trigger3 = enemynear,stateno = 60
+trigger3 = random < (ailevel * 150)
+trigger3 = p2bodydist x < 100
+trigger4 = enemynear,hitdefattr = SCA,NP,SP,HP,HA || (enemy,numproj > 0)
+trigger4 = random < (ailevel * 200)
+trigger4 = p2bodydist x = [-160,250]
+trigger5 = enemynear,hitdefattr = SCA,NA,SA,HA || (enemy,numproj > 0) || enemynear,movetype = A
+trigger5 = random < (ailevel * 400)
+trigger5 = p2bodydist x = [-10,150]
+value = 501

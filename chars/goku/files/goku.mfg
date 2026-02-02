@@ -58,6 +58,11 @@ name = "s"
 command = s
 time = 1
 
+[Command]
+name = "kamehameha_q"
+command = d
+time = 1
+
 ;==================<HOLD DIRECTION>==================
 
 [Command]
@@ -350,7 +355,16 @@ time = 1
 ;==============================================================================================
 [Statedef -1]
 
-
+;===========================================================================
+;KAMEHAMEHA - Press Q to use (requires 1/3 power)
+;===========================================================================
+[State -1, Q Kamehameha]
+type = ChangeState
+triggerall = command = "kamehameha_q"
+triggerall = power >= 1000
+triggerall = statetype != A
+trigger1 = ctrl
+value = 2000
 
 [state 0, Ground kaioken Cancels]
 type = varset

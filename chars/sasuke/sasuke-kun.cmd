@@ -427,6 +427,11 @@ name = "start"
 command = s
 time = 1
 
+[Command]
+name = "kamehameha"
+command = /$D, a
+time = 15
+
 ;-| Hold Dir |--------------------------------------------------------------
 [Command]
 name = "holdfwd";Required (do not remove)
@@ -492,10 +497,19 @@ time = 1
 ; Don't remove the following line. It's required by the CMD standard.
 [Statedef -1]
 
+;===========================================================================
+;KAMEHAMEHA (Chidori) - Press Q to use
+;===========================================================================
+[State -1, kamehameha]
+type = ChangeState
+value = 1250
+triggerall = command = "kamehameha"
+trigger1 = statetype != A
+trigger1 = ctrl
 
 ;===========================================================================
 
-;----------------- ativação da AI --------------------------
+;----------------- ativaï¿½ï¿½o da AI --------------------------
 [State -1]
 type = VarSet
 trigger1 = command = "AI_1"
@@ -519,143 +533,38 @@ trigger16 = command = "AI_16"
 v = 59
 value = 1
 ;----------------------------------------------------------------------
-;----------- AI defesa ------------------------------------------------
-;1 AI defesa ----------------------------------------------------------
-[State -1]
+;----------- AI - BASIC ATTACKS ONLY --------------------------------
+;AI punch (light)
+[State -1, AI punch]
 type = ChangeState
+value = 200
 trigger1 = RoundState = 2 && Var(59) != 0
-trigger1 =  P2BodyDist X <= 75 && Random <= 600
-trigger1 = Ctrl && P2MoveType = A && StateType = S
-value = 130
+trigger1 = Ctrl && StateType = S
+trigger1 = P2BodyDist X <= 50 && Random <= 30
 
-;--------------------- defesa abaixado ----------------------------------
-;2 AI defesa abaixado ---------------------------------------------------
-[State -1]
+;AI kick (light)
+[State -1, AI kick]
 type = ChangeState
-value = 152
-trigger1 = RoundState = 2 && Var(59) != 0
-trigger1 = P2BodyDist X <= 75 && Random <= 600
-trigger1 = Ctrl && P2MoveType = A && StateType = C
-triggerall = P2statetype = C
-;-------------------------------------------------------------------------
-;3 kunai
-[State -1]
-type = ChangeState
-value = 1010
+value = 240
 trigger1 = RoundState = 2 && Var(59) != 0
 trigger1 = Ctrl && StateType = S
-trigger1 = Random <= 600
-;-------------------------------------------------------------------------
-;---------------------------------------------------------------------------
-;4 AI selo nivel 3
-[State -1]
+trigger1 = P2BodyDist X <= 55 && Random <= 30
+
+;AI high punch (strong)
+[State -1, AI high punch]
 type = ChangeState
-value = 1120
-triggerall = power >= 1000
-triggerall = life <= 130
+value = 210
 trigger1 = RoundState = 2 && Var(59) != 0
 trigger1 = Ctrl && StateType = S
-trigger1 = Random <= 800
-;---------------------------------------------------------------------------
-;5 AI estrela grande
-[State -1]
+trigger1 = P2BodyDist X <= 50 && Random <= 25
+
+;AI high kick (strong)
+[State -1, AI high kick]
 type = ChangeState
-value = 1020
+value = 250
 trigger1 = RoundState = 2 && Var(59) != 0
 trigger1 = Ctrl && StateType = S
-trigger1 = Random <= 600
-;---------------------------------------------------------------------------
-;6 AI gatu pequeno
-[State -1]
-type = ChangeState
-value = 3054
-trigger1 = RoundState = 2 && Var(59) != 0
-trigger1 = Ctrl && StateType = S
-trigger1 = Random <= 600
-;---------------------------------------------------------------------------
-;7 gatu
-[State -1]
-type = ChangeState
-value = 1210
-trigger1 = RoundState = 2 && Var(59) != 0
-trigger1 = Ctrl && StateType = S
-trigger1 = Random <= 600
-;--------------------------------------------------------------------------
-;8 chidori rapido ----------------------------------------------------
-[State -1]
-type = ChangeState
-value = 1248
-trigger1 = RoundState = 2 && Var(59) != 0
-trigger1 = Ctrl && statetype = S
-trigger1 = Random <= 600
-;-----------------------------------------------------------------------
-;---------------------------------------------------------------------------
-;9 AI rendan
-[State -1]
-type = ChangeState
-value = 1220
-trigger1 = RoundState = 2 && Var(59) != 0
-trigger1 = Ctrl && StateType = S
-trigger1 = Random <= 600
-;------------------------------------------------------------------------
-;10 kunai z
-[State -1]
-type = ChangeState
-value = 1012
-trigger1 = RoundState = 2 && Var(59) != 0
-trigger1 = Ctrl && StateType = S
-trigger1 = Random <= 600
-;---------------------------------------------------------------------------
-;11 AI selo nivel 2
-[State -1, selo nivel 2]
-type = ChangeState
-value = 1400
-trigger1 = RoundState = 2 && Var(59) != 0
-trigger1 = Ctrl && StateType = S
-trigger1 = Random <= 600
-;triggerall = power >= 500
-;triggerall = life <= 500
-trigger1 = var(1) ;Use combo condition (above)
-;--------------------------------------------------------------------------
-;12 pulo para tras
-[State -1, pulo para tras ]
-type = ChangeState
-value = 1016
-trigger1 = RoundState = 2 && Var(59) != 0
-trigger1 = Ctrl && StateType = S
-trigger1 = Random <= 600
-;------------------------------------------------------------------------
-;13 AI super chute a--------------------------------------------------------
-[State -1]
-type = ChangeState
-value = 1050
-trigger1 = RoundState = 2 && Var(59) != 0
-trigger1 = Ctrl && StateType = S
-trigger1 = Random <= 600
-;-------------------------------------------------------------------------
-;14 AI shidori
-[State -1]
-type = ChangeState
-value = 1250
-trigger1 = RoundState = 2 && Var(59) != 0
-trigger1 = Random <= 600
-trigger1 = Ctrl && statetype != A
-;---------------------------------------------------------------------------
-;15 AI subindo com chute
-[State -1]
-type = ChangeState
-value = 1100
-trigger1 = RoundState = 2 && Var(59) != 0
-trigger1 = P2BodyDist X <= 65 && Random <= 700
-trigger1 = Ctrl && StateType = S
-;---------------------------------------------------------------------------
-;16 AI especial chute
-[State -1]
-type = ChangeState
-value = 1110
-trigger1 = RoundState = 2 && Var(59) != 0
-trigger1 = Ctrl && StateType = S
-trigger1 = P2BodyDist X <= 97 && Random <= 700
+trigger1 = P2BodyDist X <= 55 && Random <= 25
 ;---------------------------------------------------------------------------
 
 ;----------------------------------------------------------------------------
@@ -900,21 +809,22 @@ trigger1 = ctrl
 
 ;---------------------------------------------------------------------------
 ;arremessando o p2
-[State -1, arremessando o p2]
-type = ChangeState
-value = 194;800
-triggerall = command = "y"
-triggerall = statetype = S
-triggerall = ctrl
-triggerall = stateno != 100
-trigger1 = command = "holdfwd"
-trigger1 = p2bodydist X < 3
-trigger1 = (p2statetype = S) || (p2statetype = C)
-trigger1 = p2movetype != H
-trigger2 = command = "holdback"
-trigger2 = p2bodydist X < 5
-trigger2 = (p2statetype = S) || (p2statetype = C)
-trigger2 = p2movetype != H
+;DISABLED for kamehameha
+;[State -1, arremessando o p2]
+;type = ChangeState
+;value = 194;800
+;triggerall = command = "y"
+;triggerall = statetype = S
+;triggerall = ctrl
+;triggerall = stateno != 100
+;trigger1 = command = "holdfwd"
+;trigger1 = p2bodydist X < 3
+;trigger1 = (p2statetype = S) || (p2statetype = C)
+;trigger1 = p2movetype != H
+;trigger2 = command = "holdback"
+;trigger2 = p2bodydist X < 5
+;trigger2 = (p2statetype = S) || (p2statetype = C)
+;trigger2 = p2movetype != H
 
 
 ;===========================================================================
@@ -931,24 +841,25 @@ trigger2 = stateno = 200
 trigger2 = time > 6
 
 ;---------------------------------------------------------------------------
-;Stand Punch y
-[State -1, Stand Punch y]
-type = ChangeState
-value = 210
-triggerall = command = "y"
-triggerall = command != "holddown"
-trigger1 = statetype = S
-trigger1 = ctrl
-trigger2 = (stateno = 200) && time > 5
-trigger3 = (stateno = 230) && time > 6
+;Stand Punch y - DISABLED for kamehameha
+;[State -1, Stand Punch y]
+;type = ChangeState
+;value = 210
+;triggerall = command = "y"
+;triggerall = command != "holddown"
+;trigger1 = statetype = S
+;trigger1 = ctrl
+;trigger2 = (stateno = 200) && time > 5
+;trigger3 = (stateno = 230) && time > 6
 
 ;---------------------------------------------------------------------------
-;Stand Punch z
+;Stand Punch z (disabled when power >= 1000 so Kamehameha can trigger)
 [State -1, Stand Punch z]
 type = ChangeState
 value = 215
 triggerall = command = "z"
 triggerall = command != "holddown"
+triggerall = power < 1000
 trigger1 = statetype = S
 trigger1 = ctrl
 trigger2 = (stateno = 200) && time > 5
@@ -979,15 +890,16 @@ trigger2 = (stateno = 200) && time > 5
 trigger3 = (stateno = 230) && time > 6
 
 ;---------------------------------------------------------------------------
-[State -1, Stand Kick c]
-type = ChangeState
-value = 250
-triggerall = command = "c"
-triggerall = command != "holddown"
-trigger1 = statetype = S
-trigger1 = ctrl
-trigger2 = (stateno = 200) && time > 5
-trigger3 = (stateno = 230) && time > 6
+;Stand Kick c - DISABLED for kamehameha
+;[State -1, Stand Kick c]
+;type = ChangeState
+;value = 250
+;triggerall = command = "c"
+;triggerall = command != "holddown"
+;trigger1 = statetype = S
+;trigger1 = ctrl
+;trigger2 = (stateno = 200) && time > 5
+;trigger3 = (stateno = 230) && time > 6
 
 ;---------------------------------------------------------------------------
 ;kawarimi
@@ -1010,15 +922,16 @@ trigger1 = ctrl
 
 ;---------------------------------------------------------------------------
 ;Crouching Punch y
-[State -1, Crouching Punch y]
-type = ChangeState
-value = 410
-triggerall = command = "y"
-triggerall = command = "holddown"
-trigger1 = statetype = C
-trigger1 = ctrl
-trigger2 = (stateno = 400) || (stateno = 430)
-trigger2 = (time > 9) || (movecontact && time > 5)
+;Crouching Punch y - DISABLED for kamehameha
+;[State -1, Crouching Punch y]
+;type = ChangeState
+;value = 410
+;triggerall = command = "y"
+;triggerall = command = "holddown"
+;trigger1 = statetype = C
+;trigger1 = ctrl
+;trigger2 = (stateno = 400) || (stateno = 430)
+;trigger2 = (time > 9) || (movecontact && time > 5)
 
 ;---------------------------------------------------------------------------
 ;Crouching Punch z
@@ -1027,6 +940,7 @@ type = ChangeState
 value = 420
 triggerall = command = "z"
 triggerall = command = "holddown"
+triggerall = power < 1000
 trigger1 = statetype = C
 trigger1 = ctrl
 trigger2 = (stateno = 400) || (stateno = 430)
@@ -1058,15 +972,16 @@ trigger2 = (time > 9) || (movecontact && time > 5)
 
 ;---------------------------------------------------------------------------
 ;Crouching Kick c
-[State -1, Crouching Kick c]
-type = ChangeState
-value = 450
-triggerall = command = "c"
-triggerall = command = "holddown"
-trigger1 = statetype = C
-trigger1 = ctrl
-trigger2 = (stateno = 400) || (stateno = 430)
-trigger2 = (time > 9) || (movecontact && time > 5)
+;Crouching Kick c - DISABLED for kamehameha
+;[State -1, Crouching Kick c]
+;type = ChangeState
+;value = 450
+;triggerall = command = "c"
+;triggerall = command = "holddown"
+;trigger1 = statetype = C
+;trigger1 = ctrl
+;trigger2 = (stateno = 400) || (stateno = 430)
+;trigger2 = (time > 9) || (movecontact && time > 5)
 
 ;---------------------------------------------------------------------------
 ;Jump Punch x
@@ -1082,15 +997,16 @@ trigger3 = stateno = 1350 ;Air blocking
 
 ;---------------------------------------------------------------------------
 ;Jump Punch y
-[State -1, Jump Punch y]
-type = ChangeState
-value = 610
-triggerall = command = "y"
-trigger1 = statetype = A
-trigger1 = ctrl
-trigger2 = stateno = 600 || stateno = 630 ;jump_x or jump_a
-trigger2 = movecontact
-trigger3 = stateno = 1350 ;Air blocking
+;Jump Punch y - DISABLED for kamehameha
+;[State -1, Jump Punch y]
+;type = ChangeState
+;value = 610
+;triggerall = command = "y"
+;trigger1 = statetype = A
+;trigger1 = ctrl
+;trigger2 = stateno = 600 || stateno = 630 ;jump_x or jump_a
+;trigger2 = movecontact
+;trigger3 = stateno = 1350 ;Air blocking
 
 ;---------------------------------------------------------------------------
 ;Jump Punch z
@@ -1098,6 +1014,7 @@ trigger3 = stateno = 1350 ;Air blocking
 type = ChangeState
 value = 620
 triggerall = command = "z"
+triggerall = power < 1000
 trigger1 = statetype = A
 trigger1 = ctrl
 trigger2 = stateno = 600 || stateno = 630 ;jump_x or jump_a
@@ -1128,15 +1045,16 @@ trigger3 = stateno = 1350 ;Air blocking
 
 ;----------------------------------------------------------------------------
 ;Jump Kick c
-[State -1, Jump Kick c]
-type = ChangeState
-value = 650
-triggerall = command = "c"
-trigger1 = statetype = A
-trigger1 = ctrl
-trigger2 = stateno = 600 || stateno = 630 ;jump_x or jump_a
-trigger2 = movecontact
-trigger3 = stateno = 1350 ;Air blocking
+;Jump Kick c - DISABLED for kamehameha
+;[State -1, Jump Kick c]
+;type = ChangeState
+;value = 650
+;triggerall = command = "c"
+;trigger1 = statetype = A
+;trigger1 = ctrl
+;trigger2 = stateno = 600 || stateno = 630 ;jump_x or jump_a
+;trigger2 = movecontact
+;trigger3 = stateno = 1350 ;Air blocking
 
 ;----------------------------------------------------------------------------
 
