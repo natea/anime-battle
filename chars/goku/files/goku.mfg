@@ -18,12 +18,6 @@ command.buffer.time = 1
 
 ;====================<SINGLE BUTTON>====================
 
-;Easy Kamehameha shortcut (press 'q' key)
-[Command]
-name = "EasyKamehameha"
-command = d
-time = 1
-
 [Command]
 name = "a"
 command = a
@@ -823,16 +817,6 @@ trigger16 = movehit
 trigger17 = !((stateno = 1002 || stateno = 1005 || stateno = 1008) && AnimElem = 3, >= 5)  ;Ki Blast Hit
 trigger17 = cond(var(51) = 1 && (stateno != 3100), var(50) := 1, 0) ;Ground Kaioken Cancels  
 value = cond(var(43) = 0 , 3100, cond(var(43) = 1, 3101, 3102))
-
-;=== EASY KAMEHAMEHA (Press Q key) ===
-[State -1, Easy Kamehameha]
-type = ChangeState
-triggerall = AIlevel <= 0
-triggerall = command = "EasyKamehameha"
-triggerall = statetype != A
-triggerall = power >= 1000
-trigger1 = Ctrl
-value = 2000
 
 ;Kamehameha
 [State -1, Kamehameha]
