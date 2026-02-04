@@ -1,0 +1,301 @@
+;===============================================================================
+; INTELIGENCIA ARTIFICIAL:
+;===============================================================================
+[Statedef -2]
+
+[State 0, Helper]
+type = Helper
+triggerall = numhelper(905) = 0
+trigger1 = p2stateno = 901
+trigger2 = p2stateno = 1002
+helpertype = normal ;player
+name = "fx"
+ID = 905
+stateno = 905
+pos = -40,-30
+ownpal = 1
+postype = p2    ;p2,front,back,left,right
+facing = -1
+size.xscale = .5
+size.yscale = .5
+
+; TITAN MODE:
+
+[State 0, LifeSet]
+type = LifeSet
+triggerall = life <= 100
+trigger1 = stateno = [4000,4999]
+trigger1 = stateno != 4005
+value = 100
+
+[State 0, LifeAdd]
+type = LifeAdd
+trigger1 = 1
+value = -var(3)
+
+
+;---------------------------Estados usados Siempre------------------------------
+;===============================================================================
+[Statedef -3]
+
+[State 3250: Auxiliar para denunciar la posición del P2]
+type		= Helper
+triggerall      = p2name = "Zeke Yeager"
+triggerall      = numhelper(188) = 0
+trigger1        = p2life < 1
+helpertype	= Normal
+name		= "Auxiliar para denunciar la posición del P2"
+id		= 188
+pos		= 0,0
+postype		= p2
+facing		= 1
+stateno		= 188
+keyctrl		= 0
+ownpal		= 1
+supermovetime	= 0
+pausemovetime	= 0
+size.xscale     = 1
+size.yscale     = 1
+
+[State 0, ChangeState]
+type = ChangeState
+trigger1 = stateno != 1505
+trigger1 = numhelper (1507) = 1
+triggerall = p2statetype = S
+triggerall = p2movetype = A
+triggerall = p2bodydist x < 70
+triggerall = ctrl
+triggerall = StateType = S
+value = 1501+(random%2)
+ctrl = 0
+
+[State 0, HELPER ESCALA]
+type = Helper
+trigger1 = NUMHELPER(999999) = 0
+helpertype = normal
+name = "HELPER ESCALA"
+ID = 999999
+stateno = 999999
+pos = 9999,9999
+postype = P1
+facing = 1
+keyctrl = 0
+ownpal = 1
+supermove = 999999
+pausemove = 999999
+supermovetime = 999999
+pausemovetime = 999999
+;===============================================================================
+; Limitador Air Jump:
+;-------------------------------------------------------------------------------
+[State 0, VarSet]
+type = VarSet
+trigger1 = var(5) = 0 && (stateno = 65||stateno = 70)
+v = 5
+value = 1
+
+[State 0, VarSet]
+type = VarSet
+trigger1 = var(5) = 1 && pos y >= 0
+v = 5
+value = 0
+;-------------------------------------------------------------------------------
+; Sonidos Comunes:
+;-------------------------------------------------------------------------------
+[State 0, Walk]
+type = PlaySnd
+triggerall = stateno = 20
+trigger1 = animelem = 3
+value = S20,1
+volume = 50
+
+[State 0, Run]
+type = PlaySnd
+triggerall = stateno = 60
+trigger1 = animelem = 3 || animelem = 6
+value = S20,1
+volume = 50
+
+[State 0, Saltando]
+type = PlaySnd
+triggerall = stateno = 40
+trigger1 = Time = 1
+value = S40,1
+volume = 55
+channel = -1
+
+[State 0, Super Jump]
+type = PlaySnd
+triggerall = stateno = 80
+trigger1 = Time = 1
+value = S60,1
+volume = 55
+channel = -1
+
+[State 0, Land]
+type = PlaySnd
+triggerall = stateno = 52
+trigger1 = time = 1
+value = S52,1
+volume = 50
+
+[State 0, Run FWD]
+type = PlaySnd
+triggerall = stateno = 60 || stateno = 70
+trigger1 = time = 1
+value = S100,0
+volume = 50
+
+[State 0, Run FWD Air y BACK]
+type = PlaySnd
+triggerall = stateno = 75 || stateno = 76
+trigger1 = time = 1
+value = S40,1
+volume = 50
+
+[State 0, RemoveExplod]
+type = RemoveExplod
+TRIGGERALL = stateno != 500
+trigger1 = time = 1
+id = 550
+
+[State 0, StopSnd]
+type = StopSnd
+TRIGGERALL = stateno != 500
+trigger1 = time = 1
+channel = 9
+
+[State 0, Golpeado]
+type = PlaySnd
+trigger1 = movetype=H && (stateno!=[0,155]) && !time && HitOver=0 && random%3=0
+value = 5000,ifelse(random < 500,1,ifelse(random < 500,2,3))
+
+[State 0, Solucion Stand Aire]
+type = ChangeState
+triggerall = stateno = 0||stateno = 20
+trigger1 = pos y < 0
+value = 50
+ctrl = 1
+
+;-------------------------------------------------
+
+[State -3] ;ults2 2000 power
+type = ChangeState
+triggerall = ctrl
+triggerall = numhelper(1507) = 0
+triggerall = StateType = S
+triggerall = power>=1500
+triggerall = roundstate = 2
+Trigger1 = AIlevel > 0
+trigger1= random = [201,330]
+value = 770
+
+[State -3] ;ults2 1500 power
+type = ChangeState
+triggerall = ctrl
+triggerall = StateType = S
+triggerall = power>=1500
+triggerall = p2bodydist x < 60
+triggerall = roundstate = 2
+Trigger1 = AIlevel > 0
+trigger1= random = [100,200]
+value = 760+(random%2)
+
+[State -3] ;ults1  1000 power
+type = ChangeState
+triggerall = ctrl
+triggerall = StateType = S
+triggerall = power>=1000
+triggerall = roundstate = 2
+triggerall = p2bodydist x < 100
+Trigger1 = AIlevel > 0
+trigger1= random = [0,80]
+value = 750+(random%2)
+
+[State -3]
+type = ChangeState
+triggerall = ctrl
+triggerall = ailevel > 0 && roundstate = 2
+triggerall = random < 10
+trigger1 = ctrl = 1
+value = 400
+
+[State -3]
+type = ChangeState
+triggerall = StateType = S
+triggerall = ctrl
+triggerall = ailevel > 0 && roundstate = 2
+triggerall = power < 3000
+triggerall = p2bodydist x > 100
+trigger1 = ctrl = 1
+value = 500
+
+[State -3]
+type = ChangeState
+triggerall = ctrl
+triggerall = StateType = A
+trigger1 = random >500
+trigger1 = ailevel = 8
+trigger2 = random >200
+trigger2 = ailevel = [6,7]
+triggerall = roundstate = 2
+triggerall = P2bodydist X >= 150
+triggerall = ctrl = 1
+value = 76
+
+[State -3]
+type = ChangeState
+triggerall = ctrl
+triggerall = StateType = S
+trigger1 = random >500
+trigger1 = ailevel = 8
+trigger2 = random >200
+trigger2 = ailevel = [6,7]
+triggerall = roundstate = 2
+triggerall = P2bodydist X >= 150
+triggerall = ctrl = 1
+value = 60
+
+[State -3]
+type = ChangeState
+triggerall = ctrl
+triggerall = Stateno = 50
+triggerall = random<=150
+triggerall = roundstate = 2
+Trigger1 = AIlevel = 8
+Trigger2 = AIlevel = [7,6]
+Trigger3 = AIlevel = [3,5]
+trigger1 = P2bodydist X <= 100 ;&& roundstate = 2;50
+trigger2 = P2bodydist X <= 60 ;&& roundstate = 2
+trigger3 = P2bodydist X <= 30 ;&& roundstate = 2
+triggerall = ctrl = 1
+value = 630
+
+[State -3]
+type = ChangeState     ;;dodge
+triggerall = ctrl
+triggerall = StateType = S
+triggerall = p2movetype = A
+triggerall = p2statetype = S
+triggerall = roundstate = 2
+Trigger1 = AIlevel = 8
+trigger1 = P2bodydist X <= 70 ;&& roundstate = 2;50
+triggerall = ctrl = 1
+triggerall = random <200
+value = 290
+
+[State -3]
+type = ChangeState
+triggerall = ctrl
+triggerall = StateType = S
+triggerall = random<=500
+triggerall = roundstate = 2
+Trigger1 = AIlevel = 8
+Trigger2 = AIlevel = [7,6]
+Trigger3 = AIlevel = [3,5]
+trigger1 = P2bodydist X <= 100 ;&& roundstate = 2;50
+trigger2 = P2bodydist X <= 70 ;&& roundstate = 2
+trigger3 = P2bodydist X <= 40 ;&& roundstate = 2
+triggerall = ctrl = 1
+value = 200
+
