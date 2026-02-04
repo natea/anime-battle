@@ -1,0 +1,56 @@
+; [KATSUKI BAKUGO BY RIVELIO] =================================================================
+
+; For all my previous and future content, check out my channel below:
+; ---> https://www.youtube.com/user/RivelioMugen
+
+; Got any questions, requests or useful feedback to give? Be sure to let me know:
+; ---> Discord: Rivelio#1966
+
+; [SPECIAL MENTION] ===========================================================================
+
+; LEANBOOX & MATTFV: Sprite Sheet creation, expansion and huge support.
+; ---> DeviantArt: https://www.deviantart.com/leanboox
+; ---> DeviantArt: https://www.deviantart.com/mattfv
+
+; MKTENDOU: HUGE help in improving coding structure and debugging.
+; ---> Youtube: https://www.youtube.com/user/MkTendou
+
+; [CREDITS] ===================================================================================
+; Beta testing, advice and/or overall support:
+; -> LEANBOOX, AAgus, ArzenJames, Mikel8888, MattFV, Yugen, Waldo1243.
+; -> LeoKing, Knightmare404, Planeptune, DryMugen, Joshsmug, David11.
+
+[Info]
+name="All-Stars: Katsuki Bakugo"
+displayname="Bakugo"
+versiondate=09/07/2019
+mugenversion=1.1
+author="Rivelio"
+pal.defaults=1,2,3,4,5
+
+[Quotes]
+victory1 = "DIE!"
+victory2 = "I'm gonna be the number one hero!"
+victory3 = "You're nothing compared to me!"
+victory4 = "EXPLOSION!"
+
+[Files]
+sprite   = Bakugo.sff
+sound    = Bakugo.snd
+anim     = Bakugo.air
+cmd      = Bakugo.cmd
+cns      = Bakugo.cns
+st       = Bakugo.cns
+stcommon = common1.cns
+pal1     = Pal1.act
+pal2     = Pal1.act
+pal3     = Pal1.act
+pal4     = Pal1.act
+pal5     = Pal1.act
+pal6     = Pal1.act
+pal7     = Pal1.act
+pal8     = Pal1.act
+pal9     = Pal1.act
+pal10    = Pal1.act
+pal11    = Pal1.act
+pal12    = Pal1.act
