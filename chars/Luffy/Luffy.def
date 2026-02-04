@@ -1,0 +1,22 @@
+[Info]
+name = "Luffy" 
+displayname = "Luffy" 
+versiondate = 6/27/2022 
+mugenversion =  1.1 
+author = "Doly P29";aka Freshprince 24      
+pal.defaults =  1 
+
+[Quotes]
+victory1 = "I'm gonna be King of the Pirates!"
+victory2 = "Shishishi! That was fun!"
+victory3 = "I won't lose to anyone!"
+victory4 = "My crew is counting on me!"
+
+[Files]
+cmd     = Luffy.cmd
+cns     = Luffy.cns
+stcommon = Common1.cns
+sprite  = Luffy.sff
+anim    = Luffy.air 
+sound  = Luffy.snd
+st      = Luffy.cns

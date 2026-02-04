@@ -4,11 +4,17 @@
 ; Player information
 [Info]
 name ="naruto-kun"
-displayname ="NARUTO KUN"
+displayname ="Naruto Uzumaki"
 versiondate =23,12,2005
 mugenversion =11,01,2001
 author ="YOUKAI"
 pal.defaults =1,2,3,4,5,6
+
+[Quotes]
+victory1 = "Believe it!"
+victory2 = "I'm gonna be Hokage someday!"
+victory3 = "I never go back on my word!"
+victory4 = "That's my ninja way!"
 
 ; Files for the player
 [Files]

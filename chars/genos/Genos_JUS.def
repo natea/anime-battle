@@ -11,6 +11,12 @@ mugenversion = 1.0
 author ="Knightmare, Edit by TrafalgarLawzz, Edit by Bastian7s"
 pal.defaults =1
 
+[Quotes]
+victory1 = "I must become stronger... for Sensei!"
+victory2 = "Incinerate!"
+victory3 = "Justice has been served."
+victory4 = "I will eliminate all evil!"
+
 [Files]
 sprite =Genos.sff
 anim =Genos.air

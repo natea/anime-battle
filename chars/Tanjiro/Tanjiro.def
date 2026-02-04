@@ -1,0 +1,35 @@
+;***************************************************************************;
+;******************* Created in Fighter Factory Ultimate *******************;
+;*******************      http://www.virtualltek.com     *******************;
+;***************************************************************************;
+
+[Info]
+name ="Tanjiro"
+displayname ="Tanjiro (Kimetsu No Yaiba)"
+versiondate =02/11/2019
+mugenversion =1.0
+author ="Entah99"
+pal.defaults =1
+
+[Quotes]
+victory1 = "I will protect my family!"
+victory2 = "The bond between us cannot be severed!"
+victory3 = "I won't give up, no matter what!"
+victory4 = "Water Breathing... victory!"
+
+[Files]
+sprite =Tanjiro.sff
+anim =Tanjiro.air
+sound =Tanjiro.snd
+cmd =Tanjiro.cmd
+cns =Tanjiro.cns
+stcommon =common1.cns
+st =Tanjiro.cns
+pal1=1.act
+st1=IA.cns
+st2=Specials.cns
+st3=Supers.cns
+
+[Arcade]
+intro.storyboard = 
+ending.storyboard = 

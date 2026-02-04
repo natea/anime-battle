@@ -193,22 +193,69 @@
  ;
  ;Insert your characters below.
 
-;--- Naruto Universe ---
-naruto/naruto-kun.def, stages/kfm.def, order=1
-sasuke/sasuke-kun.def, stages/kfm.def, order=1
+;===============================================================================
+; ADVENTURE MODE - UNLOCK PROGRESSION
+; Start as Naruto, defeat each fighter to unlock and become them!
+;
+; BATTLE ORDER:
+; 1. Play as Naruto → Fight Sasuke → Beat him to unlock & become Sasuke
+; 2. Play as Sasuke → Fight Goku → Beat him to unlock & become Goku
+; 3. Play as Goku → Fight Genos → Beat him to unlock & become Genos  
+; 4. Play as Genos → Fight Gojo → Beat him to unlock & become Gojo
+; 5. Play as Gojo → Fight Saitama → Beat him to unlock Saitama (FINAL BOSS!)
+;===============================================================================
 
-;--- Dragon Ball Z Universe ---
-goku/GokuZ2.def, stages/kfm.def, order=1
+;--- STARTER: Naruto (Always available) ---
+; Music: "The Raising Fighting Spirit" or "Naruto Main Theme"
+naruto/naruto-kun.def, stages/kfm.def, order=1, music=sound/music/naruto.mp3
 
-;--- One Punch Man Universe ---
-genos/Genos_JUS.def, stages/kfm.def, order=8
+;--- Sasuke ---
+; Music: "Naruto Shippuden - Sasuke's Theme"
+sasuke/sasuke-kun.def, stages/kfm.def, order=1, music=sound/music/naruto.mp3
 
-;--- Jujutsu Kaisen Universe ---
-gojo/Gojo Manga (Full).def, stages/kfm.def, order=1
+;--- Goku ---
+; Music: "Dragon Ball Z - Cha-La Head-Cha-La" or "Ultimate Battle"
+goku/GokuZ2.def, stages/kfm.def, order=2, music=sound/music/dbz.mp3
 
-;--- Original Characters ---
-kfmZ, stages/kfm.def
-kfm720, stages/kfm.def, order=2
+;--- Genos ---
+; Music: "One Punch Man - The Hero!!"
+genos/Genos_JUS.def, stages/kfm.def, order=3, music=sound/music/opm.mp3
+
+;--- Gojo ---
+; Music: "Jujutsu Kaisen - Kaikai Kitan"
+gojo/Gojo Manga (Full).def, stages/kfm.def, order=4, music=sound/music/jjk.mp3
+
+;--- FINAL BOSS: Saitama (One Punch Man) ---
+; Music: "One Punch Man - Seigi Shikkou (Justice Enforcement)"
+saitama/saitama.def, stages/kfm.def, order=5, music=sound/music/opm.mp3
+
+;--- TESTING: Luffy (VS mode only for now) ---
+; Music: "One Piece - We Are!" or "Overtaken"
+Luffy/Luffy.def, stages/kfm.def, music=sound/music/onepiece.mp3
+
+;--- TESTING: Zoro (VS mode only for now) ---
+; Music: "One Piece - Zoro's Theme"
+ZORO-D V3/ZORO-D V3.def, stages/kfm.def, music=sound/music/onepiece.mp3
+
+;--- TESTING: Tanjiro (VS mode only for now) ---
+; Music: "Demon Slayer - Gurenge"
+Tanjiro/Tanjiro.def, stages/kfm.def, music=sound/music/demonslayer.mp3
+
+;--- TESTING: Deku (VS mode only for now) ---
+; Music: "My Hero Academia - You Say Run"
+MHA Deku/MHA Deku.def, stages/kfm.def, music=sound/music/mha.mp3
+
+;--- TESTING: Levi (VS mode only for now) ---
+; Music: "Attack on Titan - Vogel im Kafig" or "Barricades"
+levi ackerman/levi ackerman.def, stages/kfm.def, music=sound/music/aot.mp3
+
+;--- TESTING: Bakugo (VS mode only for now) ---
+; Music: "My Hero Academia - Jet Set Run"
+(All-Stars) Katsuki_Bakugo/(All-Stars) Katsuki_Bakugo.def, stages/kfm.def, music=sound/music/mha.mp3
+
+;--- Training Dummy (for Practice mode) ---
+kfmZ, stages/kfm.def, exclude=1
+
 randomselect
 
 ;-------------------------------------------------------------------------------
@@ -286,7 +333,7 @@ stages/stage0-720.def
  ;'maxmatches' parameter in [Characters] section)
 
  ;Maximum number of matches to fight before game ends in Arcade single mode.
-arcade.maxmatches = 4,1,0,0,0,0,0,0,0,0
+arcade.maxmatches = 1,1,1,1,1,0,0,0,0,0
 
  ;Like arcade.maxmatches, but applies to Arcade team modes (sans 'Ratio').
 team.maxmatches = 3,1,0,0,0,0,0,0,0,0

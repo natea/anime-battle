@@ -1,0 +1,491 @@
+;===============================================================================
+;---------------------------------ZENKAI SYSTEM---------------------------------
+;===============================================================================
+; (ES): El Zenkai System es una mecánica que toma las habilidades de un
+; personaje y las lleva al límite, obteniendo mejoras en sus estádisticas
+; y desbloqueando nuevos Specials y/o Supers exclusivos de este estado. Además, 
+; otorga una habilidad única a cada personaje. Este Power-Up, sin embargo,
+; es temporal, por lo que debe aprovecharse al máximo durante su activación.
+; Al llegar a su fin, tiene un tiempo de recarga antes de poder ser usado
+; nuevamente.
+
+; (EN): The Zenkai System is a mechanic that takes a character's traits and 
+; puts them into overdrive, gaining boosts in their stats and unlocking new Specials 
+; and/or Supers exclusive to this state. It also grants a special skill unique to 
+; each character. However, this Power-Up is only temporary, So one should take
+; full advantage during its activacion.
+; When it comes to an end, it has a recharge period before it can be used again.
+;-------------------------------------------------------------------------------
+
+;-------------------------------------------------------------------------------
+; Full Cowl 20% - Start
+[Statedef 2000]
+type    = S
+movetype= I
+physics = N
+juggle  = 1
+velset = 0,0
+ctrl = 0
+anim = 2000
+poweradd = -2500
+sprpriority = 2
+
+[State 0, EnvShake]
+type = EnvShake
+TriggerAll = time = [5,20]
+trigger1 = time%5 = 0
+time = 3
+phase = 90
+ampl = -3
+
+[State 0, EnvShake]
+type = EnvShake
+trigger1 = time = 22
+time = 15
+ampl = -6
+
+; SOUNDS ============
+[State 0, PlaySnd]
+type = PlaySnd
+trigger1 = time = 0
+value = S0,32
+VolumeScale = 100
+[State 0, PlaySnd]
+type = PlaySnd
+trigger1 = time = 0
+value = S0,32
+VolumeScale = 100
+[State 0, PlaySnd]
+type = PlaySnd
+trigger1 = time = 0
+value = S0,32
+VolumeScale = 100
+;====================
+
+[State 0, ZENKAI Activado]
+type = Helper
+trigger1 = time = 20
+helpertype = Normal
+name = "ZENKAI Activado"
+ID = 2010
+stateno = 2010
+pos = 999,999
+postype = p1
+ownpal = 1
+
+[State 0, "Full Cowl" Text]
+type = Helper
+trigger1 = Time = 0
+helpertype = normal
+name = "Full Cowl Text"
+ID = 2025
+stateno = 2025
+pos = 0,0
+postype = left
+facing = 1
+ownpal = 1
+ignorehitpause = 1
+SuperMoveTime = 999999
+PauseMoveTime = 999999
+
+[State 0, Dust FX]
+type = Explod
+trigger1 = time = 20
+anim = 195
+ID = 001
+pos = 0*Helper(999999),Fvar(16),0*Helper(999999),Fvar(16)
+scale = .45*Helper(999999),Fvar(16),.55*Helper(999999),Fvar(16)
+postype = p1
+facing = 1
+vfacing = 1
+bindtime = 1
+removetime = -2
+sprpriority = 0
+ontop = 1
+ownpal = 1
+removeongethit = 1
+SuperMoveTime = 999999
+PauseMoveTime = 999999
+
+;------------------------------------------------
+
+[State 3000, SuperPause]
+type = SuperPause
+trigger1 = Time = 0
+time = 30
+movetime = 30
+anim = -1
+sound = -1
+pos = 32,-80
+darken = 0
+unhittable = 1
+
+[State 3000, VarSet]
+type = Varset
+trigger1 = time = 0
+v = 12
+value = -100
+
+[State 3000, VarSet]
+type = Varset
+trigger1 = time = 40
+v = 12
+value = 0
+
+[State 3000, VarAdd]
+type = VarAdd
+trigger1 = time >= 30 && Var(12) < 0
+v = 12
+value = 6
+
+[State 3000, BGColorFX]
+type = BGPalFX
+trigger1 = Time > 0
+time = 1
+add = Var(12),Var(12),Var(12)
+
+;------------------------------------------------
+
+[State 0, Activation FX Charge]
+type = Explod
+trigger1 = Time = 0
+anim = 2012
+ID = 005
+pos = -0*Helper(999999),Fvar(16),-25*Helper(999999),Fvar(16)
+scale = .3*Helper(999999),Fvar(16),.3*Helper(999999),Fvar(16)
+postype = p1
+facing = 1
+vfacing = 1
+bindtime = -1
+accel = 0,0
+random = 0,0
+removetime = -2
+ontop = 0
+sprpriority = 2
+removeongethit = 1
+supermove = 999
+supermovetime = 999
+pausemove = 999
+pausemovetime = 999
+Trans = Add
+
+[State 0, Activation FX ON]
+type = Explod
+trigger1 = Time = 20
+anim = 2013
+ID = 005
+pos = -0*Helper(999999),Fvar(16),-25*Helper(999999),Fvar(16)
+scale = .5*Helper(999999),Fvar(16),.5*Helper(999999),Fvar(16)
+postype = p1
+facing = 1
+vfacing = 1
+bindtime = -1
+accel = 0,0
+random = 0,0
+removetime = -2
+ontop = 1
+sprpriority = 2
+removeongethit = 1
+supermove = 999
+supermovetime = 999
+pausemove = 999
+pausemovetime = 999
+Trans = Add
+
+[State 0, Viento]
+type = Explod
+trigger1 = Time = 20
+anim = 2014
+ID = 001
+pos = -15*Helper(999999),Fvar(16),1*Helper(999999),Fvar(16)
+postype = p1
+facing = 1
+vfacing = 1
+bindtime = 1
+removetime = -2
+scale = .3*Helper(999999),Fvar(16),.4*Helper(999999),Fvar(16)
+sprpriority = 1
+ontop = 1
+ownpal = 1
+removeongethit = 1
+supermovetime = 999
+
+[State 0, Viento]
+type = Explod
+trigger1 = Time = 20
+anim = 2014
+ID = 001
+pos = 10*Helper(999999),Fvar(16),1*Helper(999999),Fvar(16)
+postype = p1
+facing = -1
+vfacing = 1
+bindtime = 1
+removetime = -2
+scale = .3*Helper(999999),Fvar(16),.4*Helper(999999),Fvar(16)
+sprpriority = 1
+ontop = 1
+ownpal = 1
+removeongethit = 1
+supermovetime = 999
+
+[State 200, End]
+type = ChangeState
+trigger1 = animtime = 0
+value = 0
+ctrl = 1
+
+;-------------------------------------------------------------------------------
+; Full Cowl 20% - End
+[Statedef 2005]
+type    = S
+movetype= I
+physics = N
+juggle  = 1
+velset = 0,0
+ctrl = 0
+anim = 2005
+sprpriority = 2
+
+[State 5210, 1] ;Blink black
+type = PalFX
+trigger1 = Time = 0
+time = 5
+add = -128,-128,-128 ;256,256,256
+
+; SOUNDS ============
+[State 0, PlaySnd]
+type = PlaySnd
+trigger1 = time = 0
+value = S0,26 ;26,27
+volumescale = 100
+[State 0, PlaySnd]
+type = PlaySnd
+trigger1 = time = 0
+value = S0,26
+volumescale = 100
+[State 0, PlaySnd]
+type = PlaySnd
+trigger1 = time = 0
+value = S0,26
+volumescale = 100
+;====================
+
+[State 0, EnvShake]
+type = EnvShake
+trigger1 = Time = 0
+time = 5
+
+[State 0, ZENKAI Desactivado]
+type = Helper
+trigger1 = Time = 0
+helpertype = Normal
+name = "ZENKAI Desactivado"
+ID = 2015
+stateno = 2015
+pos = 999,999
+postype = p1
+facing = 1
+keyctrl = 0
+ownpal = 1
+
+[State 200, End]
+type = ChangeState
+trigger1 = animtime = 0
+value = 0
+ctrl = 1
+
+;-------------------------------------------------------------------------------
+; ZENKAI - On
+[Statedef 2010]
+type    = S
+movetype= I
+physics = S
+velset = 0,0
+ctrl = 0
+anim = 9999
+sprpriority = -1
+
+[State 0, PlaySnd]
+type = PlaySnd
+trigger1 = time = 0
+value = S2,2
+volume = 999
+channel = 2
+
+[State 200, End]
+type = Destroyself
+trigger1 = time = 900 ;Tiempo de Duración: 15 Segundos (900 Ticks)
+trigger2 = NumHelper (2015) = 1
+
+;-------------------------------------------------------------------------------
+; ZENKAI - Off
+[Statedef 2015]
+type    = S
+movetype= I
+physics = S
+velset = 0,0
+ctrl = 0
+anim = 9999
+sprpriority = -1
+
+[State 0, PlaySnd]
+type = PlaySnd
+trigger1 = time = 0
+value = S2,5
+volume = 999
+[State 0, PlaySnd]
+type = PlaySnd
+trigger1 = time = 0
+value = S2,5
+volume = 999
+
+[State 200, End]
+type = DestroySelf
+trigger1 = time = 600 
+;Tiempo de Recarga: 10 Segundos (600 Ticks)
+;Igualar tiempo a la duración del Helper 2020 (IA.cns)
+
+;-------------------------------------------------------------------------------
+; ZENKAI - Recharged!
+[Statedef 2020]
+type    = S
+movetype= I
+physics = S
+velset = 0,0
+ctrl = 0
+anim = 9999
+sprpriority = -1
+
+[State 0, PlaySnd]
+type = PlaySnd
+trigger1 = time = 0
+value = S2,10
+volume = 999
+[State 0, PlaySnd]
+type = PlaySnd
+trigger1 = time = 0
+value = S2,10
+volume = 999
+
+[State 200, End]
+type = Destroyself
+trigger1 = time = 5
+
+;-------------------------------------------------------------------------------
+; "Full Cowl" Text
+[Statedef 2025]
+Type    = S
+MoveType= I
+Physics = S
+Ctrl = 0
+Anim = 2025
+SprPriority = 5
+
+[State 0, BindToRoot]
+type = BindToRoot
+trigger1 = Time = 0
+pos = cond(root,facing = 1,-40,40)*Helper(999999),Fvar(16),-110*Helper(999999),Fvar(16)
+
+[State 0, AssertSpecial]
+type = AssertSpecial
+trigger1 = 1
+flag = noshadow
+
+[State 0, VelSet]
+type = VelSet
+trigger1 = Time = 0
+y = 5
+[State 0, VelAdd]
+type = VelAdd
+TriggerAll = Vel X > 0
+trigger1 = Time >= 1
+y = -.75
+[State 0, VelSet]
+type = VelSet
+TriggerAll = Time >= 5
+Trigger1 = 1
+y = 0
+
+[State 0, VarAdd]
+type = VarAdd
+trigger1 = Time >= 0
+fv = 6
+value = .05
+
+[State 0, AngleDraw]
+type = AngleDraw
+trigger1 = 1
+value = 0
+scale = .125*Helper(999999),Fvar(16),.125*Helper(999999),Fvar(16)
+ignorehitpause = 1
+
+[State 0, "20%!" Text]
+type = Helper
+TriggerAll = root,stateno = 2000 && NumHelper(2030)=0
+trigger1 = Time = 20
+helpertype = normal
+name = "20%! Text"
+ID = 2030
+stateno = 2030
+pos = 0,0
+postype = left
+facing = 1
+ownpal = 1
+ignorehitpause = 1
+SuperMoveTime = 999999
+PauseMoveTime = 999999
+
+[State 0, DestroySelf]
+type = DestroySelf
+Trigger1 = AnimTime = 0
+
+;-------------------------------------------------------------------------------
+; "20%!" Text
+[Statedef 2030]
+Type    = S
+MoveType= I
+Physics = S
+Ctrl = 0
+Anim = 2030
+SprPriority = 6
+
+[State 0, BindToParent]
+type = BindToParent
+trigger1 = Time = 0
+pos = 40*Helper(999999),Fvar(16),35*Helper(999999),Fvar(16)
+
+[State 0, AssertSpecial]
+type = AssertSpecial
+trigger1 = 1
+flag = noshadow
+
+[State 0, VarAdd]
+type = VarAdd
+trigger1 = Time = [0,7.5]
+fv = 6
+value = .2
+[State 0, VarAdd]
+type = VarAdd
+trigger1 = Time = [7.5,12.5]
+fv = 6
+value = -.15
+
+[State 0, AngleDraw]
+type = AngleDraw
+triggerall = time <= 10
+trigger1 = 1
+value = 0
+scale = .145*fvar(6)*Helper(999999),Fvar(16),.145*fvar(6)*Helper(999999),Fvar(16)
+ignorehitpause = 1
+
+[State 0, AngleDraw]
+type = AngleDraw
+triggerall = time >= 11
+trigger1 = 1
+value = 0
+scale = .145*Helper(999999),Fvar(16),.145*Helper(999999),Fvar(16)
+ignorehitpause = 1
+
+[State 0, DestroySelf]
+type = DestroySelf
+Trigger1 = AnimTime = 0

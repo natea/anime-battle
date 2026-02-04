@@ -1,0 +1,62 @@
+; [KATSUKI BAKUGO BY RIVELIO] =================================================================
+
+; For all my previous and future content, check out my channel below:
+; ---> https://www.youtube.com/user/RivelioMugen
+
+; Got any questions, requests or useful feedback to give? Be sure to let me know:
+; ---> Discord: Rivelio#1966
+
+; [SPECIAL MENTION] ===========================================================================
+
+; LEANBOOX & MATTFV: Sprite Sheet creation, expansion and huge support.
+; ---> DeviantArt: https://www.deviantart.com/leanboox
+; ---> DeviantArt: https://www.deviantart.com/mattfv
+
+; MKTENDOU: HUGE help in improving coding structure and debugging.
+; ---> Youtube: https://www.youtube.com/user/MkTendou
+
+; [CREDITS] ===================================================================================
+; Beta testing, advice and/or overall support:
+; -> LEANBOOX, AAgus, ArzenJames, Mikel8888, MattFV, Yugen, Waldo1243.
+; -> LeoKing, Knightmare404, Planeptune, DryMugen, Joshsmug, David11.
+
+; [ATTACKS & SKILLS] ==========================================================================
+
+[Normal Attacks]
+---> A: Light Combo
+---> B: Heavy Combo
+---> C: Unique Combo
+---> Dash+A: Light Dash Attack
+---> Dash+B: Heavy Dash Attack
+---> Dash+C: Unique Dash Attack
+---> Air Down+A: Aerial Down Light
+---> Air Down+B: Aerial Down Heavy
+---> Air Down+C: Aerial Down Unique
+
+[Sub-Special Attacks]
+---> Down+A: Death Blow
+---> Down+B: Concussion
+---> Down+C: Fragmentation
+
+[Special Attacks]
+---> Down, Forward + A:   BLITZ KILL
+---> Down, Backwards + A: STUN GRENADE
+---> Down, Forward + B:   BLAST RUSH TURBO (Can be used in air)
+---> Down, Backwards + B: X-CATAPULT
+---> Down, Forward + C:   AP SHOT - AUTO CANNON (Can be charged into AP SHOT FULL POWER)
+---> Down, Backwards + C: AP MACHINEGUN (Can be used in air)
+
+[Super Attacks]
+-> HELLSTORM BLAST:
+---> Down, Forward, Down, Forward + B
+---> Down, Back, Down, Back, + B
+
+-> BLAST OVER:
+---> Down, Forward, Down, Forward + C
+---> Down, Back, Down, Back, + C
+
+[Ultimate Attacks]
+-> HOWITZER IMPACT:
+---> Forward, Down, Back + B
+---> (Opponent's health below 1/3)
+===============================================================================================

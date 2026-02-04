@@ -1,0 +1,38 @@
+;***************************************************************************;
+;******************* Created in Fighter Factory Ultimate *******************;
+;*******************      http://www.virtualltek.com     *******************;
+;***************************************************************************;
+
+[Info]
+name = "Deku"
+displayname = "Deku"
+versiondate = 03/11/2020
+mugenversion = 1.1
+author = "MateoG9 Edit by Jebbee"
+
+[Quotes]
+victory1 = "Plus Ultra!"
+victory2 = "I will become a hero!"
+victory3 = "Go beyond your limits!"
+victory4 = "This is the power of One For All!"
+
+[Files]
+sprite = Izuku Midoriya.sff
+anim = Izuku Midoriya.air
+sound = Izuku Midoriya.snd
+cmd = Izuku Midoriya.cmd
+cns = Izuku Midoriya.cns
+stcommon = common1.cns
+st = Izuku Midoriya.cns
+st1 = IA.cns
+st2 = Specials.cns
+st3 = Supers.cns
+st4 = Ultimate.cns
+st5 = Awakening.cns
+st6 = Visuals.cns
+st7 = FULL COLW.cns
+pal1 = Deku1.act
+
+[Arcade]
+intro.storyboard = 
+ending.storyboard = 

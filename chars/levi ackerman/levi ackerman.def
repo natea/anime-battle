@@ -1,0 +1,37 @@
+;***************************************************************************;
+;******************* Created in Fighter Factory Ultimate *******************;
+;*******************      http://www.virtualltek.com     *******************;
+;***************************************************************************;
+
+[Info]
+name ="Levi"
+displayname ="Levi Ackerman"
+versiondate =01/02/2022
+mugenversion =1.1
+author ="Soulfire"
+pal.defaults =1
+
+[Quotes]
+victory1 = "Give up on your dreams and die."
+victory2 = "I'm humanity's strongest soldier."
+victory3 = "Tch. Filthy."
+victory4 = "No regrets."
+
+[Files]
+sprite =levi ackerman.sff
+anim =levi ackerman.air
+sound =levi ackerman.snd
+cmd =levi ackerman.cmd
+cns =levi ackerman.cns
+stcommon =common1.cns
+st =levi ackerman.cns
+pal1=1.act
+pal2=
+st1=IA.cns
+st2=Specials.cns
+st3=Supers.cns
+st4=
+
+[Arcade]
+intro.storyboard = 
+ending.storyboard = 
