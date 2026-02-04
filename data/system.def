@@ -140,35 +140,58 @@ cancel.snd = 100,2
 ;Ikemen feature: Flexible submenu grouping.
 ;Full documentation of this feature is available on Ikemen GO features wiki
 
-; Submenu: Arcade
-menu.itemname.menuarcade = "ARCADE"                          ;Ikemen feature
-menu.itemname.menuarcade.arcade = "SINGLE MODE"
-menu.itemname.menuarcade.teamarcade = "TEAM ARCADE"
-menu.itemname.menuarcade.teamcoop = "TEAM CO-OP"
-menu.itemname.menuarcade.back = "BACK"                       ;Ikemen feature
+;=============================================================================
+; ANIME CROSSOVER FIGHTER - CUSTOM GAME MODES
+;=============================================================================
 
-; Submenu: Versus
-menu.itemname.menuversus = "VS MODE"
-menu.itemname.menuversus.versus = "1P VS 2P"
-menu.itemname.menuversus.teamversus = "TEAM VERSUS"
-menu.itemname.menuversus.versuscoop = "VERSUS CO-OP"         ;Ikemen feature
-menu.itemname.menuversus.freebattle = "QUICK MATCH"          ;Ikemen feature
-menu.itemname.menuversus.back = "BACK"                       ;Ikemen feature
+; MODE 1: ADVENTURE - Fight through a series of opponents in story-like progression
+menu.itemname.adventure = "ADVENTURE"
+menu.itemname.adventure.arcade = "START ADVENTURE"
+menu.itemname.adventure.back = "BACK"
 
-; Submenu: Story Mode
-menu.itemname.storymode = "STORY MODE"                       ;Ikemen feature
-; story arcs menu items are automatically added before storymode.back
-menu.itemname.storymode.back = "BACK"                        ;Ikemen feature
+; MODE 2: PICK YOUR OWN - Choose your fighter and opponent freely
+menu.itemname.pickyourown = "PICK YOUR OWN"
+menu.itemname.pickyourown.versus = "1P VS CPU"
+menu.itemname.pickyourown.freebattle = "QUICK BATTLE"
+menu.itemname.pickyourown.training = "TRAINING"
+menu.itemname.pickyourown.back = "BACK"
 
-; Submenu: Network
-menu.itemname.menunetwork = "NETWORK"                        ;Ikemen feature
-menu.itemname.menunetwork.serverhost = "HOST GAME"           ;Ikemen feature
-menu.itemname.menunetwork.serverjoin = "JOIN GAME"           ;Ikemen feature
-menu.itemname.menunetwork.back = "BACK"                      ;Ikemen feature
+; Options
+menu.itemname.options = "OPTIONS"
 
-; known IP addresses show up before serverjoin.back item
-menu.itemname.menunetwork.serverjoin.joinadd = "NEW ADDRESS" ;Ikemen feature
-menu.itemname.menunetwork.serverjoin.back = "BACK"           ;Ikemen feature
+; Exit Game
+menu.itemname.exit = "EXIT"
+
+;=============================================================================
+; HIDDEN/DISABLED MENUS (kept for compatibility)
+;=============================================================================
+
+; Submenu: Arcade (hidden - use Adventure instead)
+;menu.itemname.menuarcade = "ARCADE"
+;menu.itemname.menuarcade.arcade = "SINGLE MODE"
+;menu.itemname.menuarcade.teamarcade = "TEAM ARCADE"
+;menu.itemname.menuarcade.teamcoop = "TEAM CO-OP"
+;menu.itemname.menuarcade.back = "BACK"
+
+; Submenu: Versus (hidden - use Pick Your Own instead)
+;menu.itemname.menuversus = "VS MODE"
+;menu.itemname.menuversus.versus = "1P VS 2P"
+;menu.itemname.menuversus.teamversus = "TEAM VERSUS"
+;menu.itemname.menuversus.versuscoop = "VERSUS CO-OP"
+;menu.itemname.menuversus.freebattle = "QUICK MATCH"
+;menu.itemname.menuversus.back = "BACK"
+
+; Submenu: Story Mode (hidden)
+;menu.itemname.storymode = "STORY MODE"
+;menu.itemname.storymode.back = "BACK"
+
+; Submenu: Network (hidden for now)
+;menu.itemname.menunetwork = "NETWORK"
+;menu.itemname.menunetwork.serverhost = "HOST GAME"
+;menu.itemname.menunetwork.serverjoin = "JOIN GAME"
+;menu.itemname.menunetwork.back = "BACK"
+;menu.itemname.menunetwork.serverjoin.joinadd = "NEW ADDRESS"
+;menu.itemname.menunetwork.serverjoin.back = "BACK"
 
 ; This group is hidden and should not be moved to other menus.
 ; It's opened automatically, after synchronization with online player.
@@ -177,36 +200,26 @@ menu.itemname.server.netplayteamcoop = "ARCADE CO-OP"        ;Ikemen feature
 menu.itemname.server.netplaysurvivalcoop = "SURVIVAL CO-OP"  ;Ikemen feature
 menu.itemname.server.back = "EXIT"                           ;Ikemen feature
 
-; Submenu: Practice
-menu.itemname.menupractice = "PRACTICE"                      ;Ikemen feature
-menu.itemname.menupractice.training = "TRAINING"             ;Ikemen feature
-;menu.itemname.menupractice.trials = "TRIALS"                 ;Ikemen feature (not implemented yet)
-menu.itemname.menupractice.back = "BACK"                     ;Ikemen feature
+; Submenu: Practice (hidden - moved to Pick Your Own)
+;menu.itemname.menupractice = "PRACTICE"
+;menu.itemname.menupractice.training = "TRAINING"
+;menu.itemname.menupractice.back = "BACK"
 
-; Submenu: Mission
-menu.itemname.menumission = "MISSION"                        ;Ikemen feature
-menu.itemname.menumission.survival = "SURVIVAL"
-menu.itemname.menumission.survivalcoop = "SURVIVAL CO-OP"
-menu.itemname.menumission.timeattack = "TIME ATTACK"         ;Ikemen feature
-menu.itemname.menumission.bonusgames = "BONUS GAMES"         ;Ikemen feature
-menu.itemname.menumission.back = "BACK"                      ;Ikemen feature
+; Submenu: Mission (hidden)
+;menu.itemname.menumission = "MISSION"
+;menu.itemname.menumission.survival = "SURVIVAL"
+;menu.itemname.menumission.survivalcoop = "SURVIVAL CO-OP"
+;menu.itemname.menumission.timeattack = "TIME ATTACK"
+;menu.itemname.menumission.bonusgames = "BONUS GAMES"
+;menu.itemname.menumission.back = "BACK"
+;menu.itemname.menumission.bonusgames.back = "BACK"
 
-; Submenu: Mission => Bonus Games
-; bonus characters menu items are automatically added before bonusgames.back
-menu.itemname.menumission.bonusgames.back = "BACK"           ;Ikemen feature
-
-; Submenu: Watch Mode
-menu.itemname.menuwatch = "WATCH MODE"                       ;Ikemen feature
-menu.itemname.menuwatch.watch = "CPU MATCH"
-menu.itemname.menuwatch.randomtest = "RANDOMTEST"            ;Ikemen feature
-menu.itemname.menuwatch.replay = "REPLAY"                    ;Ikemen feature
-menu.itemname.menuwatch.back = "BACK"                        ;Ikemen feature
-
-; Options
-menu.itemname.options = "OPTIONS"
-
-; Exit Game
-menu.itemname.exit = "EXIT"
+; Submenu: Watch Mode (hidden)
+;menu.itemname.menuwatch = "WATCH MODE"
+;menu.itemname.menuwatch.watch = "CPU MATCH"
+;menu.itemname.menuwatch.randomtest = "RANDOMTEST"
+;menu.itemname.menuwatch.replay = "REPLAY"
+;menu.itemname.menuwatch.back = "BACK"
 
 ;----------------------------
 ;Title background definition
@@ -277,7 +290,7 @@ fadeout.time = 10
 ; Are you trying to add more rows or columns?
 ; As of MUGEN 1.0, the default motif is defined in data/mugen1/system.def.
 ; You can also edit mugen.cfg to select the "big" motif.
-rows = 2
+rows = 3
 columns = 5
 wrapping = 0              ;1 to let cursor wrap around
 pos = 90,170              ;Position to draw to
