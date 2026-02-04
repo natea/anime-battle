@@ -1,0 +1,24 @@
+
+[Info]
+name = "saitama"
+displayname = "Saitama"
+versiondate = 04,14,2002
+mugenversion = 04,14,2002
+author = "umeboshi121"
+pal.defaults = 1
+
+[Quotes]
+victory1 = "OK."
+victory2 = "One punch was all I needed."
+victory3 = "I'm just a hero for fun."
+victory4 = "That was disappointing..."
+
+[Files]
+cmd     = saitama.cmd.cns
+cns     = saitama.cns
+st      = saitama.cns
+stcommon = common1.cns
+sprite  = saitama.sff
+anim    = saitama.air
+sound   = saitama.snd
+pal1    = saitama.act
