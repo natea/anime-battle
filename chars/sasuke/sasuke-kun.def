@@ -4,11 +4,17 @@
 ; Player information
 [Info]
 name ="sasuke-kun"
-displayname ="SASUKE KUN"
+displayname ="Sasuke Uchiha"
 versiondate =23,12,2005
 mugenversion =11,01,2001
 author ="YOUKAI"
 pal.defaults =1,2,3,4
+
+[Quotes]
+victory1 = "You're not even worth killing."
+victory2 = "I have severed all bonds."
+victory3 = "My eyes see everything."
+victory4 = "Pathetic."
 
 ; Files for the player
 [Files]
