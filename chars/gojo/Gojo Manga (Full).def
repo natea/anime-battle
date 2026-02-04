@@ -1,7 +1,14 @@
 [info]
 name = "Gojo Manga (Full)"
+displayname = "Gojo Satoru"
 mugenversion = 1.1
 author = "arthur"
+
+[Quotes]
+victory1 = "Throughout Heaven and Earth, I alone am the honored one."
+victory2 = "Are you the strongest because you're Gojo Satoru? Or are you Gojo Satoru because you're the strongest?"
+victory3 = "Infinity stands between us."
+victory4 = "Don't worry, I'm the strongest."
 
 [files]
 anim = anim.air
